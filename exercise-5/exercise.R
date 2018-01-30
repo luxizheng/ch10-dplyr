@@ -2,7 +2,7 @@
 
 # Install the `nycflights13` package. Load (`library()`) the package.
 # You'll also need to load `dplyr`
-#install.packages("nycflights13")  # should be done already
+# install.packages("nycflights13")  # should be done already
 library(nycflights13)
 library(dplyr)
 
