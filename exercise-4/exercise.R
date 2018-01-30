@@ -13,7 +13,8 @@ library(dplyr)
 # columns represent) 
 nrow(flights)
 ncol(flights)
-??flights
+colnames(flights)
+# ??flights
 # View(flights) 
 
 # Use `dplyr` to give the data frame a new column that is the amount of time
@@ -46,8 +47,8 @@ mean(des_SEA$time_gained, na.rm = TRUE)
 # Consider flights from JFK to SEA. What was the average, min, and max air time
 # of those flights? Bonus: use pipes to answer this question in one statement
 # (without showing any other data)!
-summary.JFK.SEA <- des_SEA %>% filter(origin == 'JFK') %>% 
-  summarize(mean = mean(time_gained, na.rm = TRUE), 
-            min = min(time_gained, na.rm = TRUE), 
-            max = max(time_gained, na.rm = TRUE)
+summary.JFK.SEA <- filter(flights, origin == "JFK", dest =="SEA") %>% 
+  summarize(mean.air.time = mean(air_time, na.rm = TRUE), 
+            min.air.time = min(air_time, na.rm = TRUE), 
+            max.air.time = max(air_time, na.rm = TRUE)
           )
